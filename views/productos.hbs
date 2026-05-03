@@ -1,0 +1,30 @@
+<h1>📦 Gestión de Inventario</h1>
+
+<div class="form-producto">
+  <h2 id="formTitle">Agregar nuevo producto</h2>
+  <form id="formProducto" enctype="multipart/form-data">
+    <input type="hidden" id="productoId"> <!-- Campo oculto para edición -->
+    <div class="form-group">
+      <input type="text" id="nombre" placeholder="Nombre del producto" required>
+    </div>
+    <div class="form-group">
+      <input type="number" id="precio" placeholder="Precio ($)" step="0.01" required>
+    </div>
+    <div class="form-group">
+      <textarea id="descripcion" placeholder="Descripción breve" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="imagen" style="display:block; margin-bottom:0.5rem; font-size:0.9rem; color:var(--text-muted);">Imagen del producto:</label>
+      <input type="file" id="imagen" accept="image/*">
+    </div>
+    <div style="display:flex; gap:1rem;">
+      <button type="submit" id="btnSubmit">Crear producto</button>
+      <button type="button" id="btnCancelar" style="display:none; background:#94a3b8;">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+<h2>Listado de Productos</h2>
+<div id="lista" class="lista-productos">
+  <!-- Se carga dinámicamente -->
+</div>

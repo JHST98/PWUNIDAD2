@@ -1,0 +1,22 @@
+<div class="auth-card" style="max-width: 450px; margin: 4rem auto;">
+  <h1>🔑 Iniciar sesión</h1>
+  <p style="color: var(--text-muted); margin-bottom: 2rem;">Ingresa tus credenciales para acceder al inventario.</p>
+
+  {{#if errors}}
+    <div class="alert error">
+      {{#each errors}}
+        <p>• {{this.msg}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  <form method="POST" action="/login">
+    <input type="email" name="email" placeholder="Correo electrónico" value="{{old.email}}" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit">Entrar al sistema</button>
+  </form>
+  
+  <p style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+    ¿No tienes cuenta? <a href="/register" style="color: var(--primary); font-weight: 600;">Regístrate aquí</a>
+  </p>
+</div>

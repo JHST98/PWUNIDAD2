@@ -1,0 +1,23 @@
+<div class="auth-card" style="max-width: 450px; margin: 4rem auto;">
+  <h1>📝 Crear Cuenta</h1>
+  <p style="color: var(--text-muted); margin-bottom: 2rem;">Únete para empezar a gestionar tus productos en tiempo real.</p>
+
+  {{#if errors}}
+    <div class="alert error">
+      {{#each errors}}
+        <p>• {{this.msg}}</p>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  <form method="POST" action="/register">
+    <input type="text" name="username" placeholder="Nombre de usuario" value="{{old.username}}" required>
+    <input type="email" name="email" placeholder="Correo electrónico" value="{{old.email}}" required>
+    <input type="password" name="password" placeholder="Contraseña (mín. 6 caracteres)" required>
+    <button type="submit">Registrarse</button>
+  </form>
+
+  <p style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+    ¿Ya tienes cuenta? <a href="/login" style="color: var(--primary); font-weight: 600;">Inicia sesión</a>
+  </p>
+</div>

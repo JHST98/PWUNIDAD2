@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} | MiInventarioExpress</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  {{#if user}}
+  <nav class="navbar">
+    <a href="/productos"> Productos</a>
+    <a href="/chat"> Chat</a>
+    <span>Bienvenido, {{user.username}}</span>
+    <a href="/logout"> Cerrar sesión</a>
+  </nav>
+  {{/if}}
+  
+  <main class="container">
+    {{{body}}}   <!-- Aquí se renderiza el contenido específico de cada vista -->
+  </main>
+
+  <script src="/cliente.js"></script>
+</body>
+</html>
